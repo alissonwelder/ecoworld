@@ -14,14 +14,6 @@ function toggleNavBar(){
     }
 }
 
-// https://www.blogger.com
-
-const $extLink = document.querySelectorAll('.ext-link')[0]
-$extLink.addEventListener('click',openLink,false)
-function openLink(){
-    window.open('https://www.blogger.com','blank')
-}
-
 /* const $intLink = document.querySelectorAll('.int-link')[2]
 const $transparenciaSect = document.querySelector('#transparencia')
 $intLink.addEventListener('click',scrollToSect,false)
@@ -34,12 +26,12 @@ function scrollToSect(){
     })
 } */
 
-const $intLinks = document.querySelectorAll('.int-link')
-const $sectArr = document.querySelectorAll('main section')
-$intLinks.forEach(function (cur,idx) {
-    cur.addEventListener('click',function() {
-            window.scrollTo({
-                top: $sectArr[idx].offsetTop - $navBar.offsetHeight,
+const $intLinks = document.querySelectorAll('.int-link a')
+$intLinks.forEach(function (cur) {
+    cur.addEventListener('click',function(evt) {
+        evt.preventDefault()   
+        window.scrollTo({
+                top: document.querySelector(cur.getAttribute('href')).offsetTop - $navBar.offsetHeight,
                 left: 0,
                 behavior: 'smooth'
         })

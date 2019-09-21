@@ -37,7 +37,7 @@ header{
     display: grid;
     grid-auto-flow: column;
 }
-.nav-bar li{
+.nav-bar a{
     width: 160px;
     height: 40px;
     display: grid;
@@ -46,7 +46,7 @@ header{
     font-family: 'Rancho', cursive;
     font-size: 1em;
     color: #F8efba;
-    cursor: pointer;
+    
 }
 
 .abs-pos{
